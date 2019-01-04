@@ -5,32 +5,29 @@ import style from './text.st.css';
 export type TextVariants = "roar" | "announceLoud" | "announce" | "announceSoft" | "ennounce" | "speakLoud" | "speak" | "speakSoft" | "mention" | "whisper";
 
 interface TextProps {
-  as?: String;
-  bold?: Boolean;
-  truncate?: Boolean;
-  uppercase?: Boolean;
+  as?: string;
+  bold?: boolean;
+  truncate?: boolean;
+  uppercase?: boolean;
   variant?: TextVariants;
 }
-const defaultProps: TextProps = {
-  as: "span",
-  bold: false,
-  truncate: false,
-  uppercase: false,
-  variant: "speak"
-};
 
-const Text: FunctionComponent<TextProps> = ({ children, truncate, bold = true, uppercase, variant = "speak", as, ...rest }) => {
+const Text: FunctionComponent<TextProps> = ({
+  children,
+  truncate = false,
+  bold = false,
+  uppercase = false,
+  variant = "speak",
+  as = "span",
+  ...rest
+}) => {
   const Element: any = as;
-  // @ts-ignore
-  return children ? <Element {...style('root', {
+  return <Element {...style('root', {
     bold,
-    // uppercase: uppercase === true,
-    // truncate: truncate === true,
+    truncate,
+    uppercase,
     variant,
-  }, rest)}>{children}</Element> : null;
+  }, rest)}>{children}</Element>;
 };
-
-
-Text.defaultProps = defaultProps;
 
 export default Text
