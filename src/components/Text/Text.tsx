@@ -18,16 +18,19 @@ const Text: FunctionComponent<TextProps> = ({
   bold = false,
   uppercase = false,
   variant = "speak",
-  as = "span",
+  as: tagName = "span",
   ...rest
 }) => {
-  const Element: any = as;
-  return <Element {...style('root', {
-    bold,
-    truncate,
-    uppercase,
-    variant,
-  }, rest)}>{children}</Element>;
+  return React.createElement(tagName, {
+    ...style('root', {
+      bold,
+      truncate,
+      uppercase,
+      variant,
+    }, rest)
+  },
+    children
+  )
 };
 
 export default Text
