@@ -10,7 +10,7 @@
 }
 
 .root {
-  -st-states: bold, truncate, uppercase, variant;
+  -st-states: bold, truncate, uppercase, variant( enum(roar, announceLoud, announce, announceSoft, ennounce, speakLoud, speak, speakSoft, mention, whisper) );
 }
 
 .root:uppercase {
@@ -23,6 +23,10 @@
 
 .root:truncate {
   -st-mixin: ellipsisMixin;
+}
+
+.root:variant(speakLoud) {
+  font-size: 32px;
 }
 
 .root:variant(speak) {
