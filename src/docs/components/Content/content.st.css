@@ -1,0 +1,9 @@
+.root {
+  /* font-size: large; */
+}
+
+.root .title {
+  background: rgb(145, 134, 136);
+  font-size: 80px;
+  margin-bottom: 20px
+}

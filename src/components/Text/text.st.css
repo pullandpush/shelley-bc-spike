@@ -1,47 +1,23 @@
-
 :import {
   -st-from: '../../mixins/mixins.st.css';
   -st-named: ellipsisMixin;
 }
 
-:import {
-  -st-from: '../project.st.css';
-  -st-named: breakpoint_Sm, breakpoint_Md, breakpoint_Lg;
-}
-
 .root {
-  -st-states: bold, truncate, uppercase, variant( enum(roar, announceLoud, announce, announceSoft, ennounce, speakLoud, speak, speakSoft, mention, whisper) );
+  -st-states: truncate;
 }
 
-.root:uppercase {
-  text-transform: uppercase
-}
+.root.speakLoud {}
 
-.root:bold {
-  font-weight: bold
-}
+.root.speak {}
 
+.root.speakSoft {}
+
+.root.uppercase {}
+
+.root.bold {}
+
+/* State selectors */
 .root:truncate {
   -st-mixin: ellipsisMixin;
 }
-
-.root:variant(speakLoud) {
-  font-size: 32px;
-}
-
-.root:variant(speak) {
-  font-size: 16px;
-}
-@media only screen and (min-width: 960px) {
-  .root:variant(speak) {
-    font-size: 18px;
-  }
-}
-@media only screen and (min-width: 1280px) {
-  .root:variant(speak) {
-    font-size: 20px;
-  }
-}
-
-
-

@@ -1,0 +1,90 @@
+:import {
+  -st-from: '../theme.st.css';
+  -st-default: BCTheme;
+}
+
+:import {
+  -st-from: "../variables.st.css";
+  -st-named:
+    breakpoint_Md,
+    breakpoint_Lg,
+    TextSecondary
+}
+
+:import {
+  -st-from: "../../../components/Text/text.st.css";
+  -st-default: Text;
+}
+
+/**
+ * The does @st-scope block (below) does allow you to omit all the BCTheme prefixes
+ * ... but it currently breaks all the CSS autocomplete. It does seem to be tracked at wix:
+ * https://github.com/wix/stylable-intelligence/issues/270
+ * but at the moment I think we can omit it but watch that issue.
+ */
+@st-scope BCTheme {}
+
+/* SpeakLoud */
+BCTheme Text.speakLoud {
+  -st-scope: BCTheme;
+  font-size: 18px;
+  color: value(TextSecondary)
+}
+
+@media only screen and (min-width: value(breakpoint_Md)) {
+  BCTheme Text.speakLoud {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: value(breakpoint_Lg) {
+  BCTheme Text.speakLoud {
+    font-size: 24px;
+  }
+}
+
+/* Speak */
+BCTheme Text.speak {
+  font-size: 16px;
+}
+
+@media only screen and (min-width: value(breakpoint_Md)) {
+  BCTheme Text.speak {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: value(breakpoint_Lg) {
+  BCTheme Text.speak {
+    font-size: 20px;
+  }
+}
+
+/* SpeakSoft */
+BCTheme Text.speakSoft {
+  font-size: 14px;
+}
+
+@media only screen and (min-width: value(breakpoint_Md)) {
+  BCTheme Text.speakSoft {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: value(breakpoint_Lg) {
+  BCTheme Text.speakSoft {
+    font-size: 18px;
+  }
+}
+
+BCTheme Text:truncate {
+  background: yellow
+}
+
+BCTheme Text.uppercase {
+  text-transform: uppercase
+}
+
+BCTheme Text.bold {
+  font-weight: 600
+}

@@ -1,0 +1,13 @@
+{
+  "beautify.language": {
+    "css": [
+      "css",
+      "scss",
+      "stylable"
+    ],
+    "html": [
+      "htm",
+      "html"
+    ]
+  }
+}

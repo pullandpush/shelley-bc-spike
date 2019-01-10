@@ -1,0 +1,67 @@
+:import {
+  -st-from: "../../formatters/hexToRGB";
+  -st-default: hexToRGB;
+}
+
+:vars {
+  /* @Breakpoints */
+  breakpoint_Xs: 0;
+  breakpoint_Sm: 600px;
+  breakpoint_Md: 960px;
+  breakpoint_Lg: 1280px;
+  breakpoint_Xl: 1920px;
+
+  /* @Colors */
+
+  /* BC Brand Palette? */
+  Brand01: #8254B9;
+  Brand02: #232A3C;
+  Brand03: #2672CD;
+  Brand04: #22c58e;
+  Brand05: #c9e4db;
+  Brand06: #F25A3A;
+  Brand07: #F7A700;
+  Brand08: #FDE160;
+  Brand09: #FDD3E0;
+
+  Grey01: #222222;
+  Grey02: #414042;
+  Grey03: #333333;
+  Grey04: #464646;
+  Grey05: #595959;
+  Grey06: #b8b8b8;
+
+  /* Lights/Neutrals? */
+  Light01: #dfe2e2;
+  Light02: #ebeff0;
+
+  /* Primary and Secondary */
+  Primary: value(Brand01);
+  PrimaryC: white;
+  Secondary: #ff2be1;
+  SecondaryC: white;
+
+  /* Generic unbranded 'pairs' as an example */
+  Pair01: #0889A8;
+  Pair01C: #FAF5F5;
+  Pair02: #233A4B;
+  Pair02C: #F9F9CD;
+  Pair03: #4D79C6;
+  Pair03C: #f7ceb0;
+  Pair04: #530e84;
+  Pair04C: #46ebcc;
+  Pair05: #DB6845;
+  Pair05C: #fff3d4;
+
+  TextPrimary: value(Grey03);
+  TextSecondary: hexToRGB(#000000);
+  TextHint: value(Grey03)b3;
+  TextContrast: white;
+
+  /* @Buttons example */
+
+  ButtonColorMain: value(Pair02);
+  ButtonColorMainHover: value(Pair02)d5;
+  ButtonColorMainActive: value(Pair02)c5;
+  ButtonColorMainLabel: value(Pair02C);
+}

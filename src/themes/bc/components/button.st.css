@@ -1,0 +1,59 @@
+:import {
+  -st-from: '../theme.st.css';
+  -st-default: BCTheme;
+}
+
+:import {
+  -st-from: "../../../components/Button/button.st.css";
+  -st-default: Button;
+}
+
+:import {
+  -st-from: "../variables.st.css";
+  -st-named:
+    ButtonColorMain,
+    ButtonColorMainHover,
+    ButtonColorMainActive,
+    ButtonColorMainLabel,
+}
+
+
+BCTheme Button {
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+  /* font: value(fontStyle); */
+
+  border-radius: 21px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px;
+  outline: none;
+
+  height: 36px;
+  font-size: 16px;
+  line-height: 24px;
+
+  padding: 0 24px;
+  color: value(ButtonColorMainLabel);
+  background: value(ButtonColorMain);
+}
+
+BCTheme Button:hover {
+  background: value(ButtonColorMainHover);
+  border-color: transparent;
+}
+
+BCTheme Button:active {
+  background-color: value(ButtonColorMainActive);
+  border-color: transparent;
+}
+
+BCTheme Button:disabled,
+.btnWhite:disabled,
+.btnError:disabled,
+.btnPremium:disabled {
+  /* background-color: value(ButtonColorDisabled);
+    color: value(ButtonTextColorDisabled); */
+}

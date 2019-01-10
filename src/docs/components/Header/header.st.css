@@ -1,0 +1,24 @@
+@namespace "header";
+
+:import {
+  -st-from: '../../../components/project.st.css';
+}
+
+.root {
+  background-color: #222;
+  padding: 20px;
+  color: white;
+}
+
+.reactLogo {
+  height: 80px;
+}
+
+.stylableLogo {
+  height: 80px;
+  width: 55px;
+}
+
+.title {
+  color: #ddd;
+}

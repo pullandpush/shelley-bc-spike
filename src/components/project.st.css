@@ -1,97 +1,78 @@
 @namespace "project";
 
 :vars {
-    fontFamily: Arial;
-    fontSize: 100%;
-    fontWeight: normal;
-    lineHeight: 1.5;
+  fontFamily: Arial;
+  fontSize: 100%;
+  fontWeight: normal;
+  lineHeight: 1.5;
 
-    breakpoint_Xs: 0;
-    breakpoint_Sm: 600;
-    breakpoint_Md: 960;
-    breakpoint_Lg: 1280;
-    breakpoint_Xl: 1920;
+  breakpoint_Xs: 0;
+  breakpoint_Sm: 600px;
+  breakpoint_Md: 960px;
+  breakpoint_Lg: 1280px;
+  breakpoint_Xl: 1920px;
 
-    /* Colors from styleguide */
-    BK1: #000000;
-    BK2: #7d8c98;
-    BK3: #adbbc6;
-    DS1: #c8c8c8;
-    DS2: #f1f1f1;
-    ER1: #d0011b;
-    PR1: #257ade;
-    PR2: #4a90e2;
-    PR3: #5cb4ff;
-    PR4: #edf7ff;
-    WT1: #ffffff;
+  /* Colors from styleguide */
+  BK1: #000000;
+  BK2: #7d8c98;
+  BK3: #adbbc6;
+  DS1: #c8c8c8;
+  DS2: #f1f1f1;
+  ER1: #d0011b;
+  PR1: #257ade;
+  PR2: #4a90e2;
+  PR3: #5cb4ff;
+  PR4: #edf7ff;
+  WT1: #ffffff;
 
-    /* Other colors - TODO: we should not use any of them  */
-    B1: #4990e2;
-    B2: #5cb4ff;
-    B3: #4990e2;
-    B4: #257ade;
-    B5: #d1d1d1;
-    B6: #f1f1f1;
-    B7: #adbbc6;
-    B10: #3899ec;
+  /* Basic colors */
+  color_MainText: value(M1);
+  /* Base text color  */
+  color_MainPlaceholder: value(M2);
+  color_MainError: value(M5);
+  color_MainDisabled: value(M6);
+  color_MainText_Background: value(M0);
+  color_Border: value(B10);
 
-    M1: #000000;
-    M2: #577083;
-    M3: #4A90E2;
-    M4: #EDF7FF;
-    M5: #D0021B;
-    M6: #c8c8c8;
-    M7: #4a90e2;
-    M0: #ffffff;
-    R1: #d0011b;
+  /* Component state colors */
+  color_Default: value(B1);
+  color_Hover: value(B2);
+  color_Active: value(B3);
+  color_Focus: value(B4);
+  color_Disabled: value(B5);
+  color_Disabled2: value(DS2);
+  color_Keyboard_Focused: value(M4);
+  color_Selected: value(DS2);
+  color_Outline: value(PR4);
 
-    /* Basic colors */
-    color_MainText: value(M1); /* Base text color  */
-    color_MainPlaceholder: value(M2);
-    color_MainError: value(M5);
-    color_MainDisabled: value(M6);
-    color_MainText_Background: value(M0);
-    color_Border: value(B10);
+  /* Copmponent Sizes */
+  inputHeight: 36px;
+  inputWidth: 192px;
+  inputLeftSpacing: 5px;
 
-    /* Component state colors */
-    color_Default: value(B1);
-    color_Hover: value(B2);
-    color_Active: value(B3);
-    color_Focus: value(B4);
-    color_Disabled: value(B5);
-    color_Disabled2: value(DS2);
-    color_Keyboard_Focused: value(M4);
-    color_Selected: value(DS2);
-    color_Outline: value(PR4);
+  defaultFont: value(fontSize) value(fontFamily), sans-serif;
 
-    /* Copmponent Sizes */
-    inputHeight: 36px;
-    inputWidth: 192px;
-    inputLeftSpacing: 5px;
+  /* Borders */
+  borderRadius: 0px;
+  borderWidth: 1px;
+  borderStyle: solid;
+  borderDefault: value(borderStyle) value(borderWidth) value(B5);
+  borderHover: value(borderStyle) value(borderWidth) value(B2);
+  borderFocus: value(borderStyle) value(borderWidth) value(B3);
+  borderDisabled: value(borderStyle) value(borderWidth) value(B5);
+  borderError: value(borderStyle) value(borderWidth) value(R1);
 
-    defaultFont: value(fontSize) value(fontFamily), sans-serif;
+  iconChevronUpBK3: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNhZGJiYzYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIxOCAxNSAxMiA5IDYgMTUiPjwvcG9seWxpbmU+PC9zdmc+);
+  iconChevronUpDS1: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNjOGM4YzgiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIxOCAxNSAxMiA5IDYgMTUiPjwvcG9seWxpbmU+PC9zdmc+);
+  iconChevronUpPR3: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM1Y2I0ZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIxOCAxNSAxMiA5IDYgMTUiPjwvcG9seWxpbmU+PC9zdmc+);
+  iconChevronDownBK3: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNhZGJiYzYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSI2IDkgMTIgMTUgMTggOSI+PC9wb2x5bGluZT48L3N2Zz4=);
+  iconChevronDownDS1: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNjOGM4YzgiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSI2IDkgMTIgMTUgMTggOSI+PC9wb2x5bGluZT48L3N2Zz4=);
+  iconChevronDownPR3: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM1Y2I0ZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSI2IDkgMTIgMTUgMTggOSI+PC9wb2x5bGluZT48L3N2Zz4=);
 
-    /* Borders */
-    borderRadius: 0px;
-    borderWidth: 1px;
-    borderStyle: solid;
-    borderDefault: value(borderStyle) value(borderWidth) value(B5);
-    borderHover: value(borderStyle) value(borderWidth) value(B2);
-    borderFocus: value(borderStyle) value(borderWidth) value(B3);
-    borderDisabled: value(borderStyle) value(borderWidth) value(B5);
-    borderError: value(borderStyle) value(borderWidth) value(R1);
-
-    iconChevronUpBK3:   url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNhZGJiYzYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIxOCAxNSAxMiA5IDYgMTUiPjwvcG9seWxpbmU+PC9zdmc+);
-    iconChevronUpDS1:   url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNjOGM4YzgiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIxOCAxNSAxMiA5IDYgMTUiPjwvcG9seWxpbmU+PC9zdmc+);
-    iconChevronUpPR3:   url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM1Y2I0ZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIxOCAxNSAxMiA5IDYgMTUiPjwvcG9seWxpbmU+PC9zdmc+);
-    iconChevronDownBK3: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNhZGJiYzYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSI2IDkgMTIgMTUgMTggOSI+PC9wb2x5bGluZT48L3N2Zz4=);
-    iconChevronDownDS1: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNjOGM4YzgiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSI2IDkgMTIgMTUgMTggOSI+PC9wb2x5bGluZT48L3N2Zz4=);
-    iconChevronDownPR3: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM1Y2I0ZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSI2IDkgMTIgMTUgMTggOSI+PC9wb2x5bGluZT48L3N2Zz4=);
-
-    iconTick:                   url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxNiI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTExLjggNEw2LjUgOS4yIDQuMiA3IDMgOC4ybDMuNSAzLjZMMTMgNS4yIi8+PC9zdmc+);
-    iconTickDisabled:           url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxNiI+PHBhdGggZmlsbD0iI2M4YzhjOCIgZD0iTTExLjggNEw2LjUgOS4yIDQuMiA3IDMgOC4ybDMuNSAzLjZMMTMgNS4yIi8+PC9zdmc+);
-    iconIntermediate:           url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxNiI+PHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTQgN2g4djJINHoiLz48L3N2Zz4=);
-    iconIntermediateDisabled:   url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxNiI+PHBhdGggZmlsbD0iI2M4YzhjOCIgZD0iTTQgN2g4djJINHoiLz48L3N2Zz4=);
+  iconTick: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxNiI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTExLjggNEw2LjUgOS4yIDQuMiA3IDMgOC4ybDMuNSAzLjZMMTMgNS4yIi8+PC9zdmc+);
+  iconTickDisabled: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxNiI+PHBhdGggZmlsbD0iI2M4YzhjOCIgZD0iTTExLjggNEw2LjUgOS4yIDQuMiA3IDMgOC4ybDMuNSAzLjZMMTMgNS4yIi8+PC9zdmc+);
+  iconIntermediate: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxNiI+PHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTQgN2g4djJINHoiLz48L3N2Zz4=);
+  iconIntermediateDisabled: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxNiI+PHBhdGggZmlsbD0iI2M4YzhjOCIgZD0iTTQgN2g4djJINHoiLz48L3N2Zz4=);
 }
 
 :global(html) {
@@ -99,7 +80,9 @@
   font-size: 16px;
 }
 
-:global(*), :global(*:before), :global(*:after) {
+:global(*),
+:global(*:before),
+:global(*:after) {
   box-sizing: inherit;
 }
 
@@ -112,12 +95,12 @@
 
 
 .hiddenElement {
-    position: absolute;
-    overflow: hidden;
-    height: 1px;
-    width: 1px;
-    margin: -1px;
-    padding: 0;
-    border: 0;
-    opacity: 0;
+  position: absolute;
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  opacity: 0;
 }
